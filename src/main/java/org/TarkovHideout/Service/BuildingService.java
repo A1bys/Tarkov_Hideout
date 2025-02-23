@@ -1,6 +1,6 @@
 package org.TarkovHideout.Service;
 
-import org.TarkovHideout.Model.buildingRequirement;
+import org.TarkovHideout.Model.BuildingRequirement;
 import org.TarkovHideout.Repository.BuildingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,17 +14,17 @@ public class BuildingService
     @Autowired
     private BuildingRepository buildingRepository;
 
-    public List<buildingRequirement> getAllBuildings()
+    public List<BuildingRequirement> getAllBuildings()
     {
         return buildingRepository.findAll();
     }
 
-    public buildingRequirement getBuildingbyId(UUID id)
+    public BuildingRequirement getBuildingbyId(UUID id)
     {
         return buildingRepository.findById(id).orElse(null);
     }
 
-    public buildingRequirement saveBuilding(buildingRequirement building)
+    public BuildingRequirement saveBuilding(BuildingRequirement building)
     {
         return buildingRepository.save(building);
     }

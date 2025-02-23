@@ -1,6 +1,6 @@
 package org.TarkovHideout.Controller;
 
-import org.TarkovHideout.Model.buildingRequirement;
+import org.TarkovHideout.Model.BuildingRequirement;
 import org.TarkovHideout.Service.BuildingRequirementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,19 +17,19 @@ public class BuildingRequirementController
     private BuildingRequirementService buildingRequirementService;
 
     @GetMapping
-    public List<buildingRequirement> getAllBuildingRequirements()
+    public List<BuildingRequirement> getAllBuildingRequirements()
     {
         return buildingRequirementService.getAllBuildingRequirements();
     }
 
     @GetMapping("/{id}")
-    public buildingRequirement getBuildingRequirementbyId(@PathVariable UUID id)
+    public BuildingRequirement getBuildingRequirementbyId(@PathVariable UUID id)
     {
         return buildingRequirementService.getBuildingRequirementbyId(id);
     }
 
     @PostMapping
-    public buildingRequirement createBuildingRequirement(@RequestBody buildingRequirement buildingRequirement)
+    public BuildingRequirement createBuildingRequirement(@RequestBody BuildingRequirement buildingRequirement)
     {
         return buildingRequirementService.saveBuildingRequirement(buildingRequirement);
     }
